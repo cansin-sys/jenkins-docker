@@ -11,7 +11,7 @@ pipeline {
     stage('Docker Build') {
     	agent any
       steps {
-      	sh 'docker build -t dockercansin/ubuntu_cansin:latest'
+      	sh 'docker build -t dockercansin/ubuntu_cansin:latest .'
       }
     }
     stage('Docker Push') {
