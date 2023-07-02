@@ -5,6 +5,12 @@ pipeline {
             steps {
                 sh 'hostname'
             }
+        stage('Push image') {
+              withDockerRegistry([ credentialsId: "9b5a2dda-4d53-4a95-a70e-bf6959b9c6e4", url: "https://hub.docker.com/" ]) {
+              dockerImage.push()
+                     }
+              } 
         }
     }
 }
+
